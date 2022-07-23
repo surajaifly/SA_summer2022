@@ -1,0 +1,7 @@
+<template>
+    <template for:each={contactList} for:item="contact">
+        <li key={contact.Id}>
+            {contact.Name} | {contact.Email}
+        </li>
+    </template>
+</template>

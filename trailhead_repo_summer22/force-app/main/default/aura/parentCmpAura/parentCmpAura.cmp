@@ -1,0 +1,12 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+	<aura:attribute name="textValue" type="String" />
+    
+    
+    <lightning:input name="input1" label="Enter some text" value="{!v.textValue}"/>
+    
+    {!v.textValue}
+    
+    <!-- CHILS COMPONENT -->
+    <hr/>
+    <c:childCmpAura childtextValue="{!v.textValue}"/>
+</aura:component>

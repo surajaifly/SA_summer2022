@@ -1,0 +1,107 @@
+<template>
+    <lightning-card title="Hello World" icon-name="standard:account">
+        <!-- Grid View / List View -->
+        <lightning-layout multiple-rows>
+                <!-- Thislightning-layout, divides the screen in 12 Pieces -->
+                <lightning-layout-item size="6" small-device-size="12" large-device-size="6">
+                    Field
+                </lightning-layout-item>
+                <lightning-layout-item size="6" small-device-size="12" large-device-size="6">
+                    Value
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" small-device-size="12" large-device-size="6">
+                    Contact First Name
+                </lightning-layout-item>
+                <lightning-layout-item size="6" small-device-size="12" large-device-size="6">
+                    {contactName}
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" small-device-size="12" large-device-size="6">
+                    Contact Email
+                </lightning-layout-item>
+                <lightning-layout-item size="6" small-device-size="12" large-device-size="6">
+                    {contactEmail}
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" small-device-size="12" large-device-size="6">
+                    Contact Amount
+                </lightning-layout-item>
+                <lightning-layout-item size="6" small-device-size="12" large-device-size="6">
+                    {contactAmount}
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" small-device-size="12" large-device-size="6">
+                    Get Input from User:
+                </lightning-layout-item>
+                <lightning-layout-item size="6" small-device-size="12" large-device-size="6">
+                    <lightning-input 
+                        type="text" 
+                        label="Enter some text"
+                        onchange={handleOnChnage}
+                    ></lightning-input>
+                </lightning-layout-item>
+
+                <lightning-layout-item size="6" small-device-size="12" large-device-size="6">
+                    INPUT FROM USERT
+                </lightning-layout-item>
+                <lightning-layout-item size="6" small-device-size="12" large-device-size="6">
+                    {contactPhone}
+                </lightning-layout-item>
+        </lightning-layout>
+
+        <hr/><!-- HORIZONTAL ROW -->
+        VARIABLE WITH ARRAY
+        <hr/>
+         <lightning-layout multiple-rows>
+            
+                <!-- DESIGNING LOGIC to WOrk with ARRAY, Collection of Items-->
+                <template for:each={contactNames} for:item="contact">
+                    <lightning-layout-item key={contact} size="3" small-device-size="12" large-device-size="3">
+                        {contact}
+                    </lightning-layout-item>
+                </template>
+            
+        </lightning-layout>
+
+        <hr/><!-- HORIZONTAL ROW -->
+        VARIABLE WITH OBJECT
+        <hr/>
+         <lightning-layout multiple-rows>
+                <!-- Importance of DOT(.) to get the Values from Object.-->
+                <lightning-layout-item size="3" small-device-size="12" large-device-size="3">
+                    {contactRecord.firstname} {contactRecord.lastname} <br/>
+                    {contactRecord.email} | {contactRecord.phone}
+                </lightning-layout-item>
+            
+        </lightning-layout>
+
+
+        <hr/><!-- HORIZONTAL ROW -->
+        VARIABLE WITH OBJECT AND ARRAY
+        <hr/>
+        <lightning-layout multiple-rows>
+            <template for:each={contactRecords} for:item="contact">
+                <lightning-layout-item key={contact} size="3" small-device-size="12" large-device-size="3">
+                    {contact.firstname} {contact.lastname} <br/>
+                    {contact.email} | {contact.phone}
+                </lightning-layout-item>
+            </template>
+            
+        </lightning-layout>
+    </lightning-card>
+
+    <!-- ASSIGNMENT 
+        #1: Create a LWC Component to capture the firstName, LastName, Email and Phone 
+            from a User, and dispaly in the following format
+            
+            FirstName LastName
+            Email | Phone
+
+        #2: Create a LWC Component, then will display two column 
+            One Column is for Hardware Names, and second one is for Software Names.
+            You need to use array for  Hardware Names, and Software Names.
+            Use for:each to display the names in the single column.
+    -->
+
+</template>

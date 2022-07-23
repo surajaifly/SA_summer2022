@@ -1,0 +1,17 @@
+<template>
+    Message from Parent Compnent: {messageFromParent}
+    <hr/>
+    <lightning-input type="text" label="Enter some text" value={textValue} 
+        onchange={handleInputChange}>
+    </lightning-input>
+
+    Value from Input Field: {textValue}
+
+    <lightning-button variant="brand" label="Send to Parent" title="Send to Parent" onclick={handleClick}
+        class="slds-m-left_x-small"></lightning-button>
+
+        <hr/>
+        <template for:each={breedList} for:item="breed">
+            <li key={breed}>{breed}</li>
+        </template>
+</template>

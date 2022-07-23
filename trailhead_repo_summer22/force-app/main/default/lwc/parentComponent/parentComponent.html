@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Hello - Parent">
+        <div class="slds-p-horizontal_small">
+            <lightning-layout>
+                <lightning-layout-item padding="around-small" size="6">
+                    Message From Child: <br/>
+                    {messageString}
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <c-child-component-one 
+                        message-from-parent="TEsting"
+                        onchildbuttonclick={handleChildCmpOneButtonClick}
+                    ></c-child-component-one><!-- Kebab Case -->
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+        <lightning-map map-markers={mapMarkers}> </lightning-map>
+        <p slot="footer">Card Footer</p>
+    </lightning-card>
+</template>

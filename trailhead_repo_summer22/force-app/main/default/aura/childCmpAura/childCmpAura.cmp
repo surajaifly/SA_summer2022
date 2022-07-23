@@ -1,0 +1,5 @@
+<aura:component >
+	<aura:attribute name="childtextValue" type="String" />
+    
+    {!v.childtextValue}
+</aura:component>
