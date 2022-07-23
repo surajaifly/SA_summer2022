@@ -19,9 +19,10 @@ export default class ChildComponentOne extends LightningElement {
             .then(result => {
                 console.log('result', result);
                 var responseObj = JSON.parse(result);
-                this.breedList = responseObj.message;
-                if (responseObj.message.length == 0) { 
-                    alert('No Item Found');
+                if (responseObj.status == 'error') {
+                    alert(responseObj.message);
+                } else { 
+                    this.breedList = responseObj.message;
                 }
             })
             .catch(error => {
